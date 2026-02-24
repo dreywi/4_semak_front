@@ -1,0 +1,35 @@
+//переменные
+$primary-color: #3498db;
+$text-color: #333;
+
+//миксин
+@mixin border-style($radius) {
+    border: 2px solid $primary-color;
+    border-radius: $radius;
+}
+
+.product-card {
+    width: 300px;
+    padding: 15px;
+    @include border-style(10px);  //используем миксин
+    font-family: Arial, sans-serif;
+    
+    &__image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    
+    &__title {
+        color: $primary-color;//используем переменную
+        font-size: 24px;
+        margin: 10px 0;
+    }
+    
+    &__description {
+        color: $text-color;//используем переменную
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
