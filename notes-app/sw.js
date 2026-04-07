@@ -74,3 +74,20 @@ self.addEventListener('fetch', event => {
       .then(response => response || fetch(event.request))
   );
 });
+
+// Push-уведомления
+self.addEventListener('push', (event) => {
+  let data = { title: 'Новое уведомление', body: '' };
+  if (event.data) {
+    data = event.data.json();
+  }
+  const options = {
+    body: data.body,
+    icon: '/icons/icon-128x128.png',
+    badge: '/icons/icon-48x48.png',
+    vibrate: [200, 100, 200]
+  };
+  event.waitUntil(
+    self.registration.showNotification(data.title, options)
+  );
+});
