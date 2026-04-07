@@ -2,12 +2,27 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Офлайн-заметки</title>
+  
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Для Android (Chrome) -->
+  <meta name="mobile-web-app-capable" content="yes">
+  
+  <!-- Цвет темы для браузера -->
+  <meta name="theme-color" content="#4285f4">
+
+  
+  <!-- Обычная фавиконка для вкладки браузера -->
+  <link rel="icon" href="/icons/icon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/icons/icon-16x16.png" sizes="16x16" type="image/png">
+  
+  <title>Мои заметки (PWA)</title>
   <link rel="stylesheet" href="https://unpkg.com/chota@latest">
 </head>
 <body>
   <div class="container" style="margin-top: 2rem;">
-    <h1>📝 Мои заметки (офлайн)</h1>
+    <h1>📝 Мои заметки (офлайн PWA)</h1>
     <form id="note-form" class="row">
       <input class="col-9" type="text" id="note-input" placeholder="Введите заметку" required>
       <button class="col-3" type="submit">Добавить</button>
